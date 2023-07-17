@@ -15,13 +15,13 @@ inputQuestion.addEventListener("keypress", async (e) => {
     }
 });
 
-const OPENAI_API_KEY = "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"; // Inserta aquí tu token de acceso de la API de OpenAI
+const OPENAI_API_KEY = "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"; // Inserta aquí tu token de acceso de la API de OpenAI
 
 async function sendQuestion() {
     const sQuestion = inputQuestion.value.trim();
 
     if (sQuestion === "") {
-        return; // Evitar el envío de preguntas vacías
+        return; // Evita o envio de perguntas vazias
     }
 
     try {
@@ -33,10 +33,10 @@ async function sendQuestion() {
                 Authorization: "Bearer " + OPENAI_API_KEY,
             },
             body: JSON.stringify({
-                model: "text-davinci-003",
+                model: "text-davinci-003.pt",
                 prompt: sQuestion,
-                max_tokens: 2048, // tamaño de la respuesta
-                temperature: 0.5, // creatividad en la respuesta
+                max_tokens: 2048, // tamanho da resposta
+                temperature: 0.5, // criatividade na resposta
             }),
         });
 
@@ -47,7 +47,7 @@ async function sendQuestion() {
         }
 
         if (json.error?.message) {
-            result.innerHTML += `<span class="error">Error: ${json.error.message}</span>`;
+            result.innerHTML += `<span class="error">Erro: ${json.error.message}</span>`;
             playErrorSound();
         } else if (json.choices?.[0].text) {
             const text = json.choices[0].text || "Sem resposta";
@@ -57,7 +57,7 @@ async function sendQuestion() {
 
         result.scrollTop = result.scrollHeight;
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Erro:", error);
     } finally {
         inputQuestion.value = "";
         inputQuestion.focus();
