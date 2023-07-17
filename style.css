@@ -2,26 +2,46 @@
 
 body {
   font-family: "Roboto", sans-serif;
-}
-
-* {
+  background-color: #1d1e23;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #1d1e23;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+header {
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+  color: white;
 }
 
-.content {
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 100px;
+  margin-right: 50px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
   width: 90%;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .chat-container {
@@ -54,11 +74,11 @@ textarea {
   color: white;
   outline: none;
   font-size: 16px;
-  font-family: Arial, sans-serif;
   line-height: 1.5;
 }
 
-.send-button {
+.send-button,
+.reset-button {
   margin-left: 8px;
   padding: 8px 16px;
   background-color: #8257e5;
@@ -81,4 +101,37 @@ textarea {
 .chat-output,
 textarea {
   color: #fff;
+}
+
+footer {
+  background-color: #1d1e23;
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+
+.footer .social-media {
+  margin-bottom: 16px;
+}
+
+.footer .social-media a {
+  margin: 0 8px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer .social-media a i {
+    margin: 0 8px;
+    color: white;
+    font-size: 50px;
+    transition: color 0.3s ease;
+  }
+  
+.footer .social-media a i:hover {
+    color: #8257e5;
+  }
+
+.footer p {
+  margin-bottom: 0;
 }

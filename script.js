@@ -33,7 +33,7 @@ async function sendQuestion() {
                 Authorization: "Bearer " + OPENAI_API_KEY,
             },
             body: JSON.stringify({
-                model: "text-davinci-003.pt",
+                model: "text-davinci-003",
                 prompt: sQuestion,
                 max_tokens: 2048, // tamaño de la respuesta
                 temperature: 0.5, // creatividad en la respuesta
@@ -72,10 +72,22 @@ function playErrorSound() {
 
 // Función para sintetizar la respuesta en voz
 function speak(text) {
-    if ('speechSynthesis' in window) {
+    if ("speechSynthesis" in window) {
         const utterance = new SpeechSynthesisUtterance(text);
         speechSynthesis.speak(utterance);
     } else {
         console.log("La síntesis de voz no es compatible en este navegador.");
     }
 }
+
+// Obtiene una referencia al botón de reinicio
+const resetButton = document.getElementById("resetButton");
+
+// Agrega un controlador de eventos al botón de reinicio
+resetButton.addEventListener("click", function () {
+    // Limpia el contenido del resultado y del campo de entrada
+    result.innerHTML = "";
+    inputQuestion.value = "";
+});
+
+

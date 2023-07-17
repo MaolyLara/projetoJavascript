@@ -6,18 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat GPT Acessível</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
 </head>
 
 <body>
-    <div class="content">
-        <div class="chat-container">
-            <div id="result" class="chat-output" aria-live="polite" role="log" aria-atomic="true"></div>
-            <div class="input-container">
-                <textarea id="inputQuestion" placeholder="Pergunte algo" rows="1"></textarea>
-                <button id="sendButton" class="send-button">Enviar</button>
+    <header>
+        <div class="logo">
+            <img src="Logo-chatgpt.jpg" alt="Logo de ChatGPT">
+            <h1>Chat GPT Acessível</h1>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="chat-container">
+                <div id="result" class="chat-output" aria-live="polite" role="log" aria-atomic="true"></div>
+                <div class="input-container">
+                    <textarea id="inputQuestion" placeholder="Pergunte algo" rows="1"></textarea>
+                    <button id="sendButton" class="send-button" aria-label="Enviar">Enviar</button>
+                    <button id="resetButton" class="reset-button" aria-label="Reiniciar">Reiniciar</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    
+    <footer>
+        <section>
+            <p>© 2023 Maoly Lara. Todos los derechos reservados.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/laramaoly" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/MaolyLara" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/maolylara" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        </div>
+        </section>
+    </footer>
     <script src="script.js"></script>
 </body>
 
