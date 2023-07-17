@@ -21,7 +21,7 @@ async function sendQuestion() {
     const sQuestion = inputQuestion.value.trim();
 
     if (sQuestion === "") {
-        return; // Evita o envio de perguntas vazias
+        return; // Evitar el envío de preguntas vacías
     }
 
     try {
@@ -35,8 +35,8 @@ async function sendQuestion() {
             body: JSON.stringify({
                 model: "text-davinci-003.pt",
                 prompt: sQuestion,
-                max_tokens: 2048, // tamanho da resposta
-                temperature: 0.5, // criatividade na resposta
+                max_tokens: 2048, // tamaño de la respuesta
+                temperature: 0.5, // creatividad en la respuesta
             }),
         });
 
@@ -47,7 +47,7 @@ async function sendQuestion() {
         }
 
         if (json.error?.message) {
-            result.innerHTML += `<span class="error">Erro: ${json.error.message}</span>`;
+            result.innerHTML += `<span class="error">Error: ${json.error.message}</span>`;
             playErrorSound();
         } else if (json.choices?.[0].text) {
             const text = json.choices[0].text || "Sem resposta";
@@ -57,7 +57,7 @@ async function sendQuestion() {
 
         result.scrollTop = result.scrollHeight;
     } catch (error) {
-        console.error("Erro:", error);
+        console.error("Error:", error);
     } finally {
         inputQuestion.value = "";
         inputQuestion.focus();
