@@ -15,7 +15,7 @@ inputQuestion.addEventListener("keypress", async (e) => {
     }
 });
 
-const OPENAI_API_KEY = "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"; // Inserta aquí tu token de acceso de la API de OpenAI
+const OPENAI_API_KEY = "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"; // Inserta aquí tu token de acceso de la API de OpenAI
 
 async function sendQuestion() {
     const sQuestion = inputQuestion.value.trim();
